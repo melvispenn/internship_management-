@@ -1,0 +1,4 @@
+{% extends "users/auth_base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Invitation expired" %} · InPACE{% endblock title %}
+{% block content %}<div class="rounded-2xl border border-yellow-200 bg-white p-6 text-center shadow-sm sm:p-8"><h1 class="text-3xl font-bold text-[#052152]">{% translate "Invitation has expired" %}</h1><p class="mt-3 text-sm leading-6 text-[#64748B]">{% translate "This invitation is no longer valid. Please ask the administrator to send a new invitation." %}</p></div>{% endblock content %}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="InPACE internship management platform" />
+    <title>{% block title %}InPACE{% endblock title %}</title>
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-shell">
+      <header class="auth-header">
+        <a href="{% url 'users:signup' %}"
+           class="auth-logo-link"
+           aria-label="Go to InPACE home">
+          <img src="{% static 'images/favicons/logo/logo.png' %}"
+               alt="InPACE"
+               class="auth-logo" />
+        </a>
+      </header>
+
+      <main class="auth-main">
+        <div class="auth-content">
+          {% if messages %}
+            <div class="auth-messages" aria-live="polite">
+              {% for message in messages %}
+                <div class="auth-message {% if message.tags == 'error' %}auth-message-error{% else %}auth-message-success{% endif %}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% block content %}{% endblock content %}
+        </div>
+      </main>
+
+      <footer class="auth-footer">
+        © {% now "Y" %} InPACE · Internship management, made simpler.
+      </footer>
+    </div>
+  </body>
+</html>

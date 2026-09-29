@@ -1,0 +1,18 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Invitations" %} · InPACE{% endblock title %}
+
+{% block content %}
+<main class="min-h-[calc(100vh-5rem)] px-5 py-10 sm:px-8 lg:px-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+      <div><p class="text-sm font-bold uppercase tracking-[0.18em] text-[#0371DA]">{% translate "Administration" %}</p><h1 class="mt-2 text-3xl font-bold tracking-tight text-[#052152]">{% translate "Invitations" %}</h1><p class="mt-2 text-sm text-[#64748B]">{% translate "Invite and manage future members of your internship community." %}</p></div>
+      <a href="{% url 'organization:invitation_create' %}" class="inline-flex items-center justify-center rounded-xl bg-[#0371DA] px-4 py-3 text-sm font-bold text-white hover:bg-[#0352B4]">+ {% translate "Invite user" %}</a>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
+      <div class="overflow-x-auto"><table class="w-full min-w-[700px] text-left text-sm"><thead class="border-b border-[#E2E8F0] bg-[#F8FAFC] text-xs uppercase tracking-wide text-[#64748B]"><tr><th class="px-5 py-4">{% translate "Recipient" %}</th><th class="px-5 py-4">{% translate "Role" %}</th><th class="px-5 py-4">{% translate "Status" %}</th><th class="px-5 py-4">{% translate "Created" %}</th><th class="px-5 py-4 text-right">{% translate "Action" %}</th></tr></thead><tbody>{% for invitation in invitations %}<tr class="border-b border-[#F1F5F9] last:border-0"><td class="px-5 py-4"><a href="{% url 'organization:invitation_detail' invitation.id %}" class="font-semibold text-[#052152] hover:text-[#0371DA]">{{ invitation.email }}</a><p class="mt-1 text-xs text-[#64748B]">{% translate "Expires" %} {{ invitation.expires_at|date:"M j, Y, P" }}</p></td><td class="px-5 py-4 text-[#64748B]">{{ invitation.get_role_display }}</td><td class="px-5 py-4"><span class="rounded-full px-2.5 py-1 text-xs font-bold {% if invitation.status == 'PENDING' and not invitation.is_expired %}bg-[#EFF6FF] text-[#0352B4]{% elif invitation.status == 'ACCEPTED' %}bg-[#F0FDF4] text-[#166534]{% else %}bg-red-50 text-red-700{% endif %}">{% if invitation.status == 'PENDING' and invitation.is_expired %}{% translate "Expired" %}{% else %}{{ invitation.get_status_display }}{% endif %}</span></td><td class="px-5 py-4 text-[#64748B]">{{ invitation.created_at|date:"M j, Y" }}</td><td class="px-5 py-4 text-right"><a href="{% url 'organization:invitation_detail' invitation.id %}" class="font-semibold text-[#0352B4]">{% translate "View" %}</a></td></tr>{% empty %}<tr><td colspan="5" class="px-5 py-12 text-center text-[#64748B]"><p class="font-semibold text-[#052152]">{% translate "No invitations yet." %}</p><p class="mt-1">{% translate "Send your first invitation to get started." %}</p></td></tr>{% endfor %}</tbody></table></div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

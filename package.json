@@ -1,0 +1,29 @@
+{
+  "name": "internship_management",
+  "version": "1.0.0",
+  "description": "This repository will contain information about my  project for my HND defence",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./internship_management/static/css/input.css -o ./internship_management/static/css/output.css --watch",
+    "build" : "npx @tailwindcss/cli -i ./internship_management/static/css/input.css -o ./internship_management/static/css/output.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HooYia/InPACE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HooYia/InPACE/issues"
+  },
+  "homepage": "https://github.com/HooYia/InPACE#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

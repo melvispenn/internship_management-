@@ -1,0 +1,110 @@
+{% load static i18n %}
+<!doctype html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="{% translate 'A professional platform for internship monitoring, management and progress.' %}"
+    />
+    <title>
+      {% block title %}{% translate "Internship Management" %}{% endblock title%}
+    </title>
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
+  </head>
+
+  <body class="flex flex-col min-h-screen">
+
+    <header class="fixed left-0 z-50 w-full">
+
+      <nav aria-label="px-0 md:pt-2 md:px-4 lg:px-8 bg-inpace-cyan"  >
+
+        <div class="border-stroke mx-auto w-full max-w-[1928px] rounded-none border shadow-sm md:rounded-lg">
+
+           <div class="flex h-[72px] items-center justify-between gap-4 px-5 md:px-8">
+
+          <a href="{% url 'home' %}"
+            class="flex items-center gap-3 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-inpace-blue focus-visible:ring-offset-2" >
+            <img
+              src="{% static 'images/logo/logo.png' %}"
+              alt="{% translate 'Internship Management logo' %}"
+              class="h-14 w-auto object-contain"
+            />
+            <span
+              class="hidden text-sm font-bold tracking-wide text-inpace-navy sm:block"
+              >{% translate "Internship Management" %}</span
+            >
+          </a>
+          <details class="relative lg:hidden">
+            <summary
+              class="cursor-pointer list-none rounded-lg bg-inpace-navy px-3 py-2 text-sm font-semibold text-white"
+            >
+              {% translate "Menu" %}
+            </summary>
+            <div
+              class="absolute right-0 top-12 z-50 grid min-w-52 gap-2 rounded-xl border border-slate-200 bg-white p-3 shadow-lg"
+            >
+              <a href="{% url 'home' %}" class="btn-primary"
+                >{% translate "Home" %}</a
+              ><a href="{% url 'about' %}" class="btn-primary"
+                >{% translate "About" %}</a
+              >{% include "home/page/_language_selector.html" %}<a
+                href="{% url 'users:login' %}"
+                class="btn-secondary"
+                >{% translate "Login" %}</a
+              >
+            </div>
+          </details>
+          <div class="hidden items-center gap-2 lg:flex">
+            <a href="{% url 'home' %}" class="btn-primary"
+              >{% translate "Home" %}</a
+            ><a href="{% url 'about' %}" class="btn-primary"
+              >{% translate "About" %}</a
+            >{% include "home/page/_language_selector.html" %}<a
+              href="{% url 'users:login' %}"
+              class="btn-secondary"
+              >{% translate "Login" %}</a
+            >
+          </div>
+        </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>{% block content %}{% endblock content %}</main>
+
+    <footer class="border-t border-inpace-navy bg-inpace-navy text-white">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-center text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
+      >
+        <p>© {% now "Y" %} {% translate "Internship Management" %}</p>
+        <a
+          href="tel:656341939"
+          class="inline-flex items-center justify-center gap-2 hover:text-inpace-bright-blue"
+          aria-label="{% translate 'Call 656341939' %}"
+          ><svg
+            aria-hidden="true"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 5.5A2.5 2.5 0 0 1 5.5 3h2l1.5 4-2 1.5a15 15 0 0 0 8.5 8.5l1.5-2 4 1.5v2A2.5 2.5 0 0 1 18.5 21C9.94 21 3 14.06 3 5.5Z"
+            /></svg
+          >656341939</a
+        >
+        <p class="text-inpace-bright-blue">
+          {% translate "Monitoring - Management - Progress" %}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

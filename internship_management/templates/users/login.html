@@ -1,0 +1,51 @@
+{% extends "users/auth_base.html" %}
+
+{% block title %}Sign in · InPACE{% endblock title %}
+
+{% block content %}
+  <section class="auth-card" aria-labelledby="login-title">
+    <div class="auth-card-header">
+      <p class="auth-eyebrow">InPACE workspace</p>
+      <h1 id="login-title" class="auth-title">Welcome back</h1>
+      <p class="auth-subtitle">
+        Sign in to your account and continue your internship journey.
+      </p>
+    </div>
+
+    {% if form.non_field_errors %}
+      <div class="auth-form-error" role="alert">
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <form method="post"
+          action="{% url 'users:login' %}"
+          class="auth-form"
+          novalidate>
+      {% csrf_token %}
+
+      {% include "users/_field.html" with field=form.email %}
+      {% include "users/_field.html" with field=form.password %}
+
+      <div class="auth-form-options">
+        <label class="auth-checkbox-label">
+          <input type="checkbox" name="remember_me" class="auth-checkbox" />
+          <span>Remember me</span>
+        </label>
+        <a href="{% url 'users:password_reset' %}" class="auth-link">
+          Forgot password?
+        </a>
+      </div>
+
+      <button type="submit" class="btn-primary auth-submit">
+        Sign in
+        <span aria-hidden="true">→</span>
+      </button>
+    </form>
+
+    <p class="auth-footer-link">
+      Don’t have an account?
+      <a href="{% url 'users:signup' %}" class="auth-link">Create account</a>
+    </p>
+  </section>
+{% endblock content %}

@@ -1,0 +1,1058 @@
+# Translations for the Internship Management project
+# Copyright (C) 2026 Penn Melvis
+# Penn Melvis <inpace@hooyia.net>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 15:40+0000\n"
+"Language: en-US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: core/models.py:35
+msgid "ID"
+msgstr ""
+
+#: core/models.py:40
+msgid "Created at"
+msgstr ""
+
+#: core/models.py:48
+msgid "Created by"
+msgstr ""
+
+#: core/models.py:53
+msgid "Updated at"
+msgstr ""
+
+#: core/models.py:61
+msgid "Updated by"
+msgstr ""
+
+#: core/models.py:66
+msgid "Is deleted"
+msgstr ""
+
+#: core/models.py:67
+msgid ""
+"Soft-delete flag. Deactivated records are excluded from default queries."
+msgstr ""
+
+#: internship_management/attendance/models.py:13
+#: internship_management/notifications/models.py:14
+#: internship_management/organization/models.py:148
+#: internship_management/submission/models.py:25
+#: internship_management/submission/models.py:88
+#: internship_management/submission/models.py:219
+#: internship_management/users/models.py:118
+msgid "intern"
+msgstr ""
+
+#: internship_management/attendance/models.py:22
+#: internship_management/organization/models.py:170
+#: internship_management/submission/models.py:229
+msgid "intern enrollment"
+msgstr ""
+
+#: internship_management/attendance/models.py:29
+msgid "marked by"
+msgstr ""
+
+#: internship_management/attendance/models.py:33
+msgid "date"
+msgstr ""
+
+#: internship_management/attendance/models.py:37
+#: internship_management/organization/models.py:115
+#: internship_management/organization/models.py:164
+#: internship_management/submission/models.py:29
+#: internship_management/submission/models.py:111
+#: internship_management/training/models.py:47
+#: internship_management/training/models.py:104
+#: internship_management/training/models.py:147
+#: internship_management/training/models.py:199
+msgid "status"
+msgstr ""
+
+#: internship_management/attendance/models.py:43
+msgid "check in"
+msgstr ""
+
+#: internship_management/attendance/models.py:49
+msgid "check out"
+msgstr ""
+
+#: internship_management/attendance/models.py:55
+msgid "verification code"
+msgstr ""
+
+#: internship_management/attendance/models.py:61
+msgid "attendance"
+msgstr ""
+
+#: internship_management/attendance/models.py:62
+msgid "attendance records"
+msgstr ""
+
+#: internship_management/notifications/models.py:23
+#: internship_management/organization/models.py:189
+#: internship_management/submission/models.py:158
+#: internship_management/users/models.py:96
+msgid "supervisor"
+msgstr ""
+
+#: internship_management/notifications/models.py:29
+msgid "notification type"
+msgstr ""
+
+#: internship_management/notifications/models.py:35
+#: internship_management/training/models.py:130
+#: internship_management/training/models.py:172
+msgid "title"
+msgstr ""
+
+#: internship_management/notifications/models.py:40
+msgid "message"
+msgstr ""
+
+#: internship_management/notifications/models.py:44
+msgid "read"
+msgstr ""
+
+#: internship_management/notifications/models.py:48
+msgid "read at"
+msgstr ""
+
+#: internship_management/notifications/models.py:53
+msgid "notification"
+msgstr ""
+
+#: internship_management/notifications/models.py:54
+msgid "notifications"
+msgstr ""
+
+#: internship_management/organization/forms.py:23
+msgid "recipient@example.com"
+msgstr ""
+
+#: internship_management/organization/forms.py:40
+msgid "A pending invitation already exists for this email address."
+msgstr ""
+
+#: internship_management/organization/forms.py:49
+msgid "Full name"
+msgstr ""
+
+#: internship_management/organization/forms.py:56
+msgid "Password"
+msgstr ""
+
+#: internship_management/organization/forms.py:63
+msgid "Confirm password"
+msgstr ""
+
+#: internship_management/organization/forms.py:82
+msgid "The passwords do not match."
+msgstr ""
+
+#: internship_management/organization/models.py:12
+#: internship_management/organization/models.py:52
+#: internship_management/training/models.py:23
+#: internship_management/training/models.py:89
+#: internship_management/users/models.py:92
+#: internship_management/users/models.py:110
+msgid "name"
+msgstr ""
+
+#: internship_management/organization/models.py:18
+#: internship_management/organization/models.py:28
+#: internship_management/organization/models.py:62
+#: internship_management/organization/models.py:67
+#: internship_management/training/models.py:28
+#: internship_management/training/models.py:94
+msgid "description"
+msgstr ""
+
+#: internship_management/organization/models.py:23
+#: internship_management/training/models.py:61
+#: internship_management/training/models.py:206
+msgid "slug"
+msgstr ""
+
+#: internship_management/organization/models.py:35
+#: internship_management/organization/models.py:48
+msgid "speciality"
+msgstr ""
+
+#: internship_management/organization/models.py:36
+msgid "specialities"
+msgstr ""
+
+#: internship_management/organization/models.py:57
+msgid "date of creation"
+msgstr ""
+
+#: internship_management/organization/models.py:74
+#: internship_management/organization/models.py:155
+#: internship_management/organization/models.py:196
+#: internship_management/training/models.py:19
+msgid "group"
+msgstr ""
+
+#: internship_management/organization/models.py:75
+msgid "groups"
+msgstr ""
+
+#: internship_management/organization/models.py:91
+msgid "email"
+msgstr ""
+
+#: internship_management/organization/models.py:95
+#: internship_management/users/models.py:35
+msgid "role"
+msgstr ""
+
+#: internship_management/organization/models.py:104
+msgid "invited by"
+msgstr ""
+
+#: internship_management/organization/models.py:109
+msgid "token"
+msgstr ""
+
+#: internship_management/organization/models.py:122
+msgid "accepted at"
+msgstr ""
+
+#: internship_management/organization/models.py:128
+msgid "expired at"
+msgstr ""
+
+#: internship_management/organization/models.py:135
+msgid "invitation"
+msgstr ""
+
+#: internship_management/organization/models.py:136
+msgid "invitations"
+msgstr ""
+
+#: internship_management/organization/models.py:159
+#: internship_management/organization/models.py:207
+msgid "active"
+msgstr ""
+
+#: internship_management/organization/models.py:171
+msgid "intern enrollments"
+msgstr ""
+
+#: internship_management/organization/models.py:199
+#: internship_management/training/models.py:33
+#: internship_management/users/models.py:113
+msgid "start date"
+msgstr ""
+
+#: internship_management/organization/models.py:200
+#: internship_management/training/models.py:37
+#: internship_management/users/models.py:114
+msgid "end date"
+msgstr ""
+
+#: internship_management/organization/models.py:202
+msgid "is active"
+msgstr ""
+
+#: internship_management/organization/models.py:212
+msgid "supervision"
+msgstr ""
+
+#: internship_management/organization/models.py:213
+msgid "supervisions"
+msgstr ""
+
+#: internship_management/organization/views.py:86
+msgid "Invitation sent successfully."
+msgstr ""
+
+#: internship_management/organization/views.py:90
+msgid "The invitation was saved, but the email could not be sent."
+msgstr ""
+
+#: internship_management/organization/views.py:112
+msgid "An accepted invitation cannot be resent."
+msgstr ""
+
+#: internship_management/organization/views.py:115
+msgid "A revoked invitation cannot be resent."
+msgstr ""
+
+#: internship_management/organization/views.py:134
+msgid "Invitation resent successfully."
+msgstr ""
+
+#: internship_management/organization/views.py:134
+msgid "Invitation updated, but the email could not be sent."
+msgstr ""
+
+#: internship_management/organization/views.py:145
+msgid "Invitation revoked."
+msgstr ""
+
+#: internship_management/organization/views.py:187
+msgid "An account already exists for this email address."
+msgstr ""
+
+#: internship_management/submission/models.py:18
+#: internship_management/training/models.py:213
+msgid "assignment"
+msgstr ""
+
+#: internship_management/submission/models.py:36
+#: internship_management/training/models.py:140
+#: internship_management/training/models.py:186
+msgid "file"
+msgstr ""
+
+#: internship_management/submission/models.py:43
+msgid "link"
+msgstr ""
+
+#: internship_management/submission/models.py:48
+msgid "submitted at"
+msgstr ""
+
+#: internship_management/submission/models.py:54
+msgid "validated at"
+msgstr ""
+
+#: internship_management/submission/models.py:63
+msgid "validated by"
+msgstr ""
+
+#: internship_management/submission/models.py:69
+#: internship_management/submission/models.py:165
+msgid "assignment submission"
+msgstr ""
+
+#: internship_management/submission/models.py:70
+msgid "assignment submissions"
+msgstr ""
+
+#: internship_management/submission/models.py:92
+msgid "report date"
+msgstr ""
+
+#: internship_management/submission/models.py:96
+msgid "previous work done"
+msgstr ""
+
+#: internship_management/submission/models.py:102
+msgid "today's plan"
+msgstr ""
+
+#: internship_management/submission/models.py:106
+msgid "challenges"
+msgstr ""
+
+#: internship_management/submission/models.py:118
+msgid "submission date"
+msgstr ""
+
+#: internship_management/submission/models.py:127
+msgid "reviewed by"
+msgstr ""
+
+#: internship_management/submission/models.py:132
+msgid "reviewed at"
+msgstr ""
+
+#: internship_management/submission/models.py:138
+#: internship_management/submission/models.py:174
+msgid "daily report"
+msgstr ""
+
+#: internship_management/submission/models.py:139
+msgid "daily reports"
+msgstr ""
+
+#: internship_management/submission/models.py:180
+msgid "comment"
+msgstr ""
+
+#: internship_management/submission/models.py:185
+msgid "sticker"
+msgstr ""
+
+#: internship_management/submission/models.py:192
+#: internship_management/submission/models.py:193
+msgid "feedback"
+msgstr ""
+
+#: internship_management/submission/models.py:232
+msgid "completed assignments"
+msgstr ""
+
+#: internship_management/submission/models.py:236
+msgid "last updated"
+msgstr ""
+
+#: internship_management/submission/models.py:241
+#: internship_management/submission/models.py:242
+msgid "progress"
+msgstr ""
+
+#: internship_management/templates/allauth/layouts/entrance.html:8
+#: internship_management/templates/base.backup.html:98
+msgid "Sign In"
+msgstr ""
+
+#: internship_management/templates/base.backup.html:83
+msgid "My Profile"
+msgstr ""
+
+#: internship_management/templates/base.backup.html:87
+msgid "Sign Out"
+msgstr ""
+
+#: internship_management/templates/base.backup.html:93
+msgid "Sign Up"
+msgstr ""
+
+#: internship_management/templates/home/page/_language_selector.html:2
+msgid "English"
+msgstr ""
+
+#: internship_management/templates/home/page/_language_selector.html:2
+msgid "Français"
+msgstr ""
+
+#: internship_management/templates/home/page/about.html:3
+msgid "About · Internship Management"
+msgstr ""
+
+#: internship_management/templates/home/page/about.html:4
+#: internship_management/templates/home/page/index.html:22
+#: internship_management/templates/home/page/index.html:23
+msgid "About"
+msgstr ""
+
+#: internship_management/templates/home/page/about.html:4
+msgid ""
+"Welcome to the story, this will explain about the general representation of "
+"the enterprise."
+msgstr ""
+
+#: internship_management/templates/home/page/about.html:4
+msgid "Back to Home"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:8
+msgid ""
+"A professional platform for internship monitoring, management and progress."
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:9
+#: internship_management/templates/home/page/index.html:20
+#: internship_management/templates/home/page/index.html:28
+#: internship_management/templates/home/page/welcome.html:5
+msgid "Internship Management"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:16
+msgid "Primary navigation"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:19
+msgid "Internship Management logo"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:22
+msgid "Menu"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:22
+#: internship_management/templates/home/page/index.html:23
+msgid "Home"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:22
+#: internship_management/templates/home/page/index.html:23
+msgid "Login"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:28
+msgid "Call 656341939"
+msgstr ""
+
+#: internship_management/templates/home/page/index.html:28
+msgid "Monitoring - Management - Progress"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:3
+msgid "Welcome · Internship Management"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:5
+msgid "Welcome to a clearer path for internship progress."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:5
+msgid ""
+"Monitor attendance, organize training, support supervision and follow every "
+"intern’s progress in one professional platform."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:5
+msgid "Go to Login"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid "The platform"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid "Everything needed to support an internship"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid "Monitoring"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid ""
+"Track attendance, intern follow-up and supervision with a clear view of "
+"daily activity."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid "Management"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid ""
+"Organize interns, supervisors, groups and training activities in one shared "
+"workspace."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid "Progress"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:6
+msgid ""
+"Follow assignments, validation, training progress and daily reports from "
+"start to finish."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:7
+msgid "Testimonials"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:7
+msgid ""
+"A simple way to keep supervision, attendance and learning progress connected."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:7
+msgid "Example platform perspective"
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:7
+msgid ""
+"Clear follow-up helps every intern make meaningful progress during training."
+msgstr ""
+
+#: internship_management/templates/home/page/welcome.html:7
+msgid "Example training perspective"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:3
+#: internship_management/templates/invitation/invitation_email.html:2
+msgid "Accept invitation"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+msgid "You’re invited"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+msgid "Join InPACE"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+msgid "You have been invited to join as"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+msgid "Email"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+#: internship_management/templates/invitation/invitation_detail.html:6
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Expires"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_accept.html:4
+msgid "Accept and set up account"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:4
+#: internship_management/templates/invitation/invitation_detail.html:6
+msgid "Invitation details"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+#: internship_management/templates/invitation/invite_user.html:9
+msgid "Back to invitations"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Status"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+#: internship_management/templates/invitation/invitation_list.html:14
+#: utils/enum.py:19
+msgid "Expired"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+msgid "Invited by"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Created"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+msgid "Resend invitation"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_detail.html:6
+msgid "Revoke invitation"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_email.html:2
+#: internship_management/templates/invitation/invitation_email_subject.txt:1
+msgid "You’re invited to join InPACE"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_email.html:2
+msgid "Hello"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_email.html:2
+msgid ""
+"An administrator has invited you to join the internship management platform "
+"as a"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_email.html:2
+msgid "This invitation expires on"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_email.html:2
+msgid "If you were not expecting this invitation, you can ignore this email."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_expired.html:3
+msgid "Invitation expired"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_expired.html:4
+msgid "Invitation has expired"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_expired.html:4
+msgid ""
+"This invitation is no longer valid. Please ask the administrator to send a "
+"new invitation."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_invalid.html:3
+msgid "Invalid invitation"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_invalid.html:4
+msgid "Invitation is invalid"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_invalid.html:4
+msgid ""
+"This invitation link cannot be found. Check the link or ask the "
+"administrator for help."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:4
+#: internship_management/templates/invitation/invitation_list.html:10
+msgid "Invitations"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:10
+msgid "Administration"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:10
+msgid "Invite and manage future members of your internship community."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:11
+#: internship_management/templates/invitation/invite_user.html:4
+msgid "Invite user"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Recipient"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Role"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Action"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "View"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "No invitations yet."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_list.html:14
+msgid "Send your first invitation to get started."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_revoked.html:3
+msgid "Invitation revoked"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_revoked.html:4
+msgid "Invitation has been revoked"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_revoked.html:4
+msgid ""
+"This invitation is no longer available. Please contact the administrator who "
+"sent it."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:3
+msgid "Set up your account"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:4
+msgid "Account setup"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:4
+msgid "Complete your account"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:4
+msgid "Your invitation is for"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:4
+msgid "and is linked to"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_setup.html:4
+msgid "Create account"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_success.html:3
+#: internship_management/templates/invitation/invitation_success.html:4
+msgid "Invitation accepted"
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_success.html:4
+msgid "Your account is ready. You can now access your InPACE dashboard."
+msgstr ""
+
+#: internship_management/templates/invitation/invitation_success.html:4
+msgid "Go to dashboard"
+msgstr ""
+
+#: internship_management/templates/invitation/invite_user.html:11
+msgid "Invitation management"
+msgstr ""
+
+#: internship_management/templates/invitation/invite_user.html:12
+msgid "Invite a team member"
+msgstr ""
+
+#: internship_management/templates/invitation/invite_user.html:13
+msgid ""
+"Choose the role now. The recipient cannot change it during account setup."
+msgstr ""
+
+#: internship_management/templates/invitation/invite_user.html:19
+msgid "Send invitation"
+msgstr ""
+
+#: internship_management/training/models.py:41
+msgid "issue date"
+msgstr ""
+
+#: internship_management/training/models.py:57
+msgid "created by"
+msgstr ""
+
+#: internship_management/training/models.py:67
+#: internship_management/training/models.py:85
+msgid "training program"
+msgstr ""
+
+#: internship_management/training/models.py:68
+msgid "training programs"
+msgstr ""
+
+#: internship_management/training/models.py:99
+msgid "order"
+msgstr ""
+
+#: internship_management/training/models.py:113
+#: internship_management/training/models.py:126
+#: internship_management/training/models.py:168
+msgid "module"
+msgstr ""
+
+#: internship_management/training/models.py:114
+msgid "modules"
+msgstr ""
+
+#: internship_management/training/models.py:135
+#: internship_management/training/models.py:181
+msgid "content"
+msgstr ""
+
+#: internship_management/training/models.py:156
+msgid "document"
+msgstr ""
+
+#: internship_management/training/models.py:157
+msgid "documents"
+msgstr ""
+
+#: internship_management/training/models.py:177
+msgid "instructions"
+msgstr ""
+
+#: internship_management/training/models.py:193
+msgid "due date"
+msgstr ""
+
+#: internship_management/training/models.py:214
+msgid "assignments"
+msgstr ""
+
+#: internship_management/users/admin.py:35
+msgid "Personal info"
+msgstr ""
+
+#: internship_management/users/admin.py:36
+msgid "Account role"
+msgstr ""
+
+#: internship_management/users/admin.py:38
+msgid "Permissions"
+msgstr ""
+
+#: internship_management/users/admin.py:49
+msgid "Important dates"
+msgstr ""
+
+#: internship_management/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: internship_management/users/forms.py:137
+#: internship_management/users/tests/test_forms.py:41
+msgid "This email has already been taken."
+msgstr ""
+
+#: internship_management/users/models.py:33
+msgid "Name of User"
+msgstr ""
+
+#: internship_management/users/models.py:40
+msgid "email address"
+msgstr ""
+
+#: internship_management/users/models.py:42
+#: internship_management/users/models.py:93
+#: internship_management/users/models.py:111
+msgid "phone number"
+msgstr ""
+
+#: internship_management/users/models.py:66
+msgid "code"
+msgstr ""
+
+#: internship_management/users/models.py:69
+msgid "used"
+msgstr ""
+
+#: internship_management/users/models.py:74
+msgid "user"
+msgstr ""
+
+#: internship_management/users/models.py:90
+#: internship_management/users/models.py:108
+msgid "user account"
+msgstr ""
+
+#: internship_management/users/models.py:97
+msgid "supervisors"
+msgstr ""
+
+#: internship_management/users/models.py:112
+msgid "date joined"
+msgstr ""
+
+#: internship_management/users/models.py:115
+msgid "leaving date"
+msgstr ""
+
+#: internship_management/users/models.py:119
+msgid "interns"
+msgstr ""
+
+#: internship_management/users/tests/test_views.py:78
+#: internship_management/users/views.py:58
+msgid "Information successfully updated"
+msgstr ""
+
+#: utils/enum.py:6
+msgid "Admin"
+msgstr ""
+
+#: utils/enum.py:7 utils/enum.py:13
+msgid "Supervisor"
+msgstr ""
+
+#: utils/enum.py:8 utils/enum.py:12
+msgid "Intern"
+msgstr ""
+
+#: utils/enum.py:17
+msgid "Pending"
+msgstr ""
+
+#: utils/enum.py:18
+msgid "Accepted"
+msgstr ""
+
+#: utils/enum.py:20
+msgid "Cancelled"
+msgstr ""
+
+#: utils/enum.py:24 utils/enum.py:30 utils/enum.py:35 utils/enum.py:40
+#: utils/enum.py:60
+msgid "Draft"
+msgstr ""
+
+#: utils/enum.py:25
+msgid "Active"
+msgstr ""
+
+#: utils/enum.py:26
+msgid "Completed"
+msgstr ""
+
+#: utils/enum.py:31 utils/enum.py:36 utils/enum.py:41
+msgid "Published"
+msgstr ""
+
+#: utils/enum.py:42
+msgid "Closed"
+msgstr ""
+
+#: utils/enum.py:46
+msgid "To do"
+msgstr ""
+
+#: utils/enum.py:47
+msgid "Ongoing"
+msgstr ""
+
+#: utils/enum.py:48 utils/enum.py:61
+msgid "Submitted"
+msgstr ""
+
+#: utils/enum.py:49
+msgid "Validated"
+msgstr ""
+
+#: utils/enum.py:50
+msgid "Rejected"
+msgstr ""
+
+#: utils/enum.py:51
+msgid "Submission received"
+msgstr ""
+
+#: utils/enum.py:55
+msgid "Present"
+msgstr ""
+
+#: utils/enum.py:56
+msgid "Absent"
+msgstr ""
+
+#: utils/enum.py:62
+msgid "Reviewed"
+msgstr ""
+
+#: utils/enum.py:66
+msgid "Good"
+msgstr ""
+
+#: utils/enum.py:67
+msgid "Very good"
+msgstr ""
+
+#: utils/enum.py:68
+msgid "Needs improvement"
+msgstr ""
+
+#: utils/enum.py:69
+msgid "Excellent"
+msgstr ""
+
+#: utils/enum.py:73
+msgid "Module sent"
+msgstr ""
+
+#: utils/enum.py:74
+msgid "Document sent"
+msgstr ""
+
+#: utils/enum.py:75
+msgid "Assignment sent"
+msgstr ""
+
+#: utils/enum.py:76
+msgid "Submission validated"
+msgstr ""
+
+#: utils/enum.py:77
+msgid "Submission rejected"
+msgstr ""
+
+#: utils/enum.py:78
+msgid "Feedback received"
+msgstr ""
+
+#: utils/enum.py:79
+msgid "Daily report"
+msgstr ""

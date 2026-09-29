@@ -1,0 +1,24 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Invite user" %} · InPACE{% endblock title %}
+
+{% block content %}
+<main class="min-h-[calc(100vh-5rem)] px-5 py-10 sm:px-8 lg:px-12">
+  <div class="mx-auto max-w-2xl">
+    <a href="{% url 'organization:invitation_list' %}" class="text-sm font-semibold text-[#0352B4]">← {% translate "Back to invitations" %}</a>
+    <div class="mt-5 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8">
+      <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#0371DA]">{% translate "Invitation management" %}</p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-[#052152]">{% translate "Invite a team member" %}</h1>
+      <p class="mt-2 text-sm leading-6 text-[#64748B]">{% translate "Choose the role now. The recipient cannot change it during account setup." %}</p>
+      {% if form.non_field_errors %}<div class="mt-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{{ form.non_field_errors }}</div>{% endif %}
+      <form method="post" class="mt-7 space-y-5" novalidate>
+        {% csrf_token %}
+        {% include "users/_field.html" with field=form.email %}
+        {% include "users/_field.html" with field=form.role %}
+        <button type="submit" class="w-full rounded-xl bg-[#0371DA] px-4 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#0352B4]">{% translate "Send invitation" %}</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock content %}

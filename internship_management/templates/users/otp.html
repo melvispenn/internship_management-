@@ -1,0 +1,11 @@
+{% extends "users/auth_base.html" %}
+{% block title %}Verify your email · InPACE{% endblock title %}
+{% block content %}
+  <section class="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-[0_12px_40px_rgba(5,33,82,0.08)] sm:p-8">
+    <div class="mb-8 text-center"><div class="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#F0FDF4] text-[#16993C]" aria-hidden="true"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" /></svg></div><h1 class="text-3xl font-bold tracking-tight text-[#052152]">Verify your email</h1><p class="mt-2 text-sm leading-6 text-[#64748B]">Enter the 6-digit code we sent to your email address. The code is valid for 5 minutes.</p></div>
+    {% if form.non_field_errors %}<div class="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+    <form method="post" class="space-y-5" novalidate>{% csrf_token %}{% include "users/_field.html" with field=form.code %}<button type="submit" class="w-full rounded-xl bg-[#0371DA] px-4 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#0352B4] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0371DA] focus-visible:ring-offset-2">Verify email</button></form>
+    <p class="mt-6 text-center text-xs text-[#64748B]">Didn’t receive a code? Check your spam folder or contact your administrator.</p>
+  </section>
+{% endblock content %}
+

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Dashboard · InPACE{% endblock title %}</title>
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
+  </head>
+  <body class="min-h-screen bg-[#F8FAFC] text-[#0F172A] antialiased">
+    <div class="min-h-screen lg:flex">
+      <aside id="dashboard-sidebar" class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full border-r border-[#E2E8F0] bg-white transition-transform duration-200 lg:static lg:translate-x-0">
+        <div class="flex h-full flex-col px-5 py-6">
+          <div class="flex items-center justify-between"><a href="{% url 'users:dashboard' %}" class="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0371DA]"><img src="{% static 'images/favicons/logo/logo.png' %}" alt="InPACE" class="h-14 w-auto object-contain" /></a><button type="button" data-sidebar-close class="rounded-lg p-2 text-[#64748B] hover:bg-[#F8FAFC] lg:hidden" aria-label="Close navigation">×</button></div>
+          <div class="mt-7 rounded-xl bg-[#F0F6FF] px-4 py-3"><p class="text-xs font-bold uppercase tracking-[0.16em] text-[#0371DA]">{{ role|default:"INTERN"|title }} workspace</p><p class="mt-1 truncate text-sm font-semibold text-[#052152]">{{ user.email }}</p></div>
+          <nav class="mt-7 flex-1 space-y-1" aria-label="Main navigation">
+            <a href="{% url 'users:dashboard' %}" class="flex items-center gap-3 rounded-xl bg-[#EFF6FF] px-3 py-2.5 text-sm font-bold text-[#0352B4]"><span class="text-base">⌂</span>Dashboard</a>
+            {% if role == "ADMIN" %}
+              {% include "dashboard/_nav_item.html" with label="Interns" icon="◉" %}{% include "dashboard/_nav_item.html" with label="Supervisors" icon="◌" %}{% include "dashboard/_nav_item.html" with label="Departments" icon="▦" %}{% include "dashboard/_nav_item.html" with label="Groups" icon="▤" %}{% include "dashboard/_nav_item.html" with label="Invitations" icon="✉" url_name="organization:invitation_list" %}{% include "dashboard/_nav_item.html" with label="Supervision" icon="↗" %}{% include "dashboard/_nav_item.html" with label="Reports" icon="▥" %}
+            {% elif role == "SUPERVISOR" %}
+              {% include "dashboard/_nav_item.html" with label="My interns" icon="◉" %}{% include "dashboard/_nav_item.html" with label="Training program" icon="▦" %}{% include "dashboard/_nav_item.html" with label="Assignments" icon="✓" %}{% include "dashboard/_nav_item.html" with label="Submissions" icon="↗" %}{% include "dashboard/_nav_item.html" with label="Attendance" icon="◷" %}{% include "dashboard/_nav_item.html" with label="Daily reports" icon="▤" %}{% include "dashboard/_nav_item.html" with label="Progress" icon="↗" %}
+            {% else %}
+              {% include "dashboard/_nav_item.html" with label="Training program" icon="▦" %}{% include "dashboard/_nav_item.html" with label="Assignments" icon="✓" %}{% include "dashboard/_nav_item.html" with label="Daily reports" icon="▤" %}{% include "dashboard/_nav_item.html" with label="Attendance" icon="◷" %}{% include "dashboard/_nav_item.html" with label="Progress" icon="↗" %}
+            {% endif %}
+            <div class="my-4 border-t border-[#E2E8F0]"></div>
+            {% include "dashboard/_nav_item.html" with label="Notifications" icon="●" %}{% include "dashboard/_nav_item.html" with label="Profile & settings" icon="⚙" %}
+          </nav>
+          <a href="{% url 'users:logout' %}" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-[#64748B] transition hover:bg-red-50 hover:text-red-700"><span>↪</span>Sign out</a>
+        </div>
+      </aside>
+      <div id="dashboard-overlay" data-sidebar-close class="fixed inset-0 z-30 hidden bg-[#052152]/30 lg:hidden"></div>
+      <div class="min-w-0 flex-1">
+        <header class="sticky top-0 z-20 flex h-20 items-center justify-between border-b border-[#E2E8F0] bg-white/95 px-5 backdrop-blur sm:px-8 lg:px-10">
+          <button type="button" data-sidebar-open class="rounded-xl border border-[#E2E8F0] p-2.5 text-[#052152] hover:bg-[#F8FAFC] lg:hidden" aria-label="Open navigation">☰</button>
+          <div class="hidden lg:block"><p class="text-sm font-semibold text-[#64748B]">{{ role|default:"INTERN"|title }} dashboard</p><p class="text-lg font-bold text-[#052152]">Stay on course with InPACE</p></div>
+          <div class="ml-auto flex items-center gap-3"><span class="hidden text-right sm:block"><span class="block text-sm font-bold text-[#052152]">{{ user.name|default:user.email }}</span><span class="block text-xs text-[#64748B]">{{ user.email }}</span></span><span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#052152] text-sm font-bold text-white">{{ user.name|default:user.email|first|upper }}</span></div>
+        </header>
+        {% block content %}{% endblock content %}
+      </div>
+    </div>
+    <script>
+      const sidebar = document.getElementById('dashboard-sidebar');
+      const overlay = document.getElementById('dashboard-overlay');
+      document.querySelector('[data-sidebar-open]')?.addEventListener('click', () => { sidebar.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); });
+      document.querySelectorAll('[data-sidebar-close]').forEach((element) => element.addEventListener('click', () => { sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); }));
+    </script>
+  </body>
+</html>
