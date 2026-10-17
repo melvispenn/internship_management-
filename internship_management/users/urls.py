@@ -22,6 +22,7 @@ urlpatterns = [
     path("login/", views.login_view, name="account_login"),
     path("logout/", views.logout_view, name="logout"),
     path("dashboard/", views.dashboard, name="dashboard"),
+    path("notifications/", views.notifications_view, name="notifications"),
     path("password-reset/", auth_views.PasswordResetView.as_view(template_name="users/password_reset_request.html", email_template_name="users/password_reset_email.html", subject_template_name="users/password_reset_subject.txt", success_url=reverse_lazy("users:password_reset_done")), name="password_reset"),
     path("password-reset/sent/", auth_views.PasswordResetDoneView.as_view(template_name="users/password_reset_done.html"), name="password_reset_done"),
     path("password-reset/<uidb64>/<token>/", auth_views.PasswordResetConfirmView.as_view(template_name="users/password_reset_confirm.html", success_url=reverse_lazy("users:password_reset_complete")), name="password_reset_confirm"),

@@ -79,6 +79,20 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 user_redirect_view = UserRedirectView.as_view()
 
 
+def notifications_view(request):
+    if not request.user.is_authenticated:
+        return redirect("users:login")
+
+    role = UserRole.ADMIN if request.user.is_superuser else (request.user.role or UserRole.INTERN)
+    if role == "INTERN":
+        notifications = Notification.objects.filter(intern__user=request.user)
+    elif role == "SUPERVISOR":
+        notifications = Notification.objects.filter(supervisor__user=request.user)
+    else:
+        notifications = Notification.objects.none()
+    return render(request, "dashboard/notifications.html", {"notifications": notifications, "unread_notifications": notifications.filter(is_read=False).count(), "role": role})
+
+
 def _dashboard_schema_ready():
     """Return whether the domain tables have the fields used by the dashboard."""
     required_tables = {
@@ -124,8 +138,14 @@ def dashboard(request):
     # migrations are repaired. The phone migration and authentication do not
     # depend on those tables, and rendering an empty role dashboard is safer
     # than allowing a missing domain column to turn login into a 500 response.
+    dashboard_template = {
+        "ADMIN": "dashboard/admin/page/index.html",
+        "SUPERVISOR": "dashboard/supervisor/page/index.html",
+        "INTERN": "dashboard/intern/page/index.html",
+    }[role]
+
     if not _dashboard_schema_ready():
-        return render(request, "dashboard/page/index.html", context)
+        return render(request, dashboard_template, context)
 
     if role == "ADMIN":
         total_attendance = Attendance.objects.count()
@@ -180,10 +200,10 @@ def dashboard(request):
         context.update(
             {
                 "stats": [
-                    {"label": "Overall progress", "value": f"{round((validated_assignments / total_assignments) * 100) if total_assignments else 0}%", "tone": "blue"},
-                    {"label": "Attendance", "value": f"{round((present / attendance.count()) * 100) if attendance.count() else 0}%", "tone": "green"},
-                    {"label": "Pending assignments", "value": submissions.exclude(status="VALIDATED").count(), "tone": "bright"},
-                    {"label": "Submitted", "value": submissions.filter(status__in=["SUBMITTED", "VALIDATED"]).count(), "tone": "navy"},
+                    {"label": "Overall progress", "value": f"{round((validated_assignments / total_assignments) * 100) if total_assignments else 0}%", "tone": "blue", "icon": "progress"},
+                    {"label": "Attendance", "value": f"{round((present / attendance.count()) * 100) if attendance.count() else 0}%", "tone": "green", "icon": "attendance"},
+                    {"label": "Pending assignments", "value": submissions.exclude(status="VALIDATED").count(), "tone": "bright", "icon": "assignments"},
+                    {"label": "Submitted", "value": submissions.filter(status__in=["SUBMITTED", "VALIDATED"]).count(), "tone": "navy", "icon": "report"},
                 ],
                 "enrollments": enrollments,
                 "recent_reports": DailyReport.objects.filter(intern=intern).order_by("-report_date")[:5] if intern else DailyReport.objects.none(),
@@ -193,7 +213,7 @@ def dashboard(request):
         )
     return render(
         request,
-        "dashboard/page/index.html",
+        dashboard_template,
         context,
     )
 
@@ -295,10 +315,23 @@ def login_view(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
+            email = form.cleaned_data["email"].strip()
+            password = form.cleaned_data["password"]
+            account = User.objects.filter(email__iexact=email).first()
+
+            # Give users a useful explanation when signup created the account
+            # but email/OTP verification has not been completed yet.
+            if account and not account.is_active and account.check_password(password):
+                form.add_error(
+                    None,
+                    "Your account is not active yet. Please complete email verification before signing in.",
+                )
+                return render(request, "users/login.html", {"form": form})
+
             user = authenticate(
                 request,
-                email=form.cleaned_data["email"],
-                password=form.cleaned_data["password"],
+                email=account.email if account else email,
+                password=password,
             )
             if user is not None:
                 login(request, user)
