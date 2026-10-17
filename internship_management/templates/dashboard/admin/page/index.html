@@ -1,7 +1,7 @@
-{% extends "dashboard/admin/base.html" %}
+{% extends "dashboard/admin/base.html" %}{% load i18n %}
 
 {% block content %}
   <main class="min-h-[calc(100vh-4.5rem)] bg-[#F5F9FF] px-5 py-8 sm:px-8 lg:px-10">
-    <div class="mx-auto max-w-[1440px]"><h1 class="text-3xl font-bold text-[#052152]">Admin Dashboard</h1><p class="mt-2 text-sm text-[#64748B]">Monitor the internship platform and manage its users and groups.</p><section class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{% for stat in stats %}<article class="rounded-xl border border-[#D7E7F7] bg-white p-5 shadow-sm"><p class="text-sm text-[#0352B4]">{{ stat.label }}</p><p class="mt-4 text-2xl font-bold text-[#052152]">{{ stat.value }}</p></article>{% empty %}<article class="rounded-xl border border-[#D7E7F7] bg-white p-5 shadow-sm"><p class="text-sm text-[#0352B4]">Platform status</p><p class="mt-4 text-2xl font-bold text-[#168438]">Active</p></article>{% endfor %}</section></div>
+    <div class="mx-auto max-w-[1440px]"><h1 class="text-3xl font-bold text-[#052152]">{% translate "Admin Dashboard" %}</h1><p class="mt-2 text-sm text-[#64748B]">{% translate "Monitor the internship platform and manage its users and groups." %}</p><section class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{% for stat in stats %}<article class="rounded-xl border border-[#D7E7F7] bg-white p-5 shadow-sm"><p class="text-sm text-[#0352B4]">{{ stat.label }}</p><p class="mt-4 text-2xl font-bold text-[#052152]">{{ stat.value }}</p></article>{% empty %}<article class="rounded-xl border border-[#D7E7F7] bg-white p-5 shadow-sm"><p class="text-sm text-[#0352B4]">{% translate "Platform status" %}</p><p class="mt-4 text-2xl font-bold text-[#168438]">{% translate "Active" %}</p></article>{% endfor %}</section></div>
   </main>
 {% endblock content %}

@@ -200,10 +200,10 @@ def dashboard(request):
         context.update(
             {
                 "stats": [
-                    {"label": "Overall progress", "value": f"{round((validated_assignments / total_assignments) * 100) if total_assignments else 0}%", "tone": "blue", "icon": "progress"},
-                    {"label": "Attendance", "value": f"{round((present / attendance.count()) * 100) if attendance.count() else 0}%", "tone": "green", "icon": "attendance"},
-                    {"label": "Pending assignments", "value": submissions.exclude(status="VALIDATED").count(), "tone": "bright", "icon": "assignments"},
-                    {"label": "Submitted", "value": submissions.filter(status__in=["SUBMITTED", "VALIDATED"]).count(), "tone": "navy", "icon": "report"},
+                    {"label": _("Overall progress"), "value": f"{round((validated_assignments / total_assignments) * 100) if total_assignments else 0}%", "tone": "blue", "icon": "progress"},
+                    {"label": _("Attendance"), "value": f"{round((present / attendance.count()) * 100) if attendance.count() else 0}%", "tone": "green", "icon": "attendance"},
+                    {"label": _("Pending assignments"), "value": submissions.exclude(status="VALIDATED").count(), "tone": "bright", "icon": "assignments"},
+                    {"label": _("Submitted"), "value": submissions.filter(status__in=["SUBMITTED", "VALIDATED"]).count(), "tone": "navy", "icon": "report"},
                 ],
                 "enrollments": enrollments,
                 "recent_reports": DailyReport.objects.filter(intern=intern).order_by("-report_date")[:5] if intern else DailyReport.objects.none(),

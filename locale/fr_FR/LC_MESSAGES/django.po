@@ -1020,23 +1020,23 @@ msgstr "Inscriptions closes"
 
 #: utils/enum.py:46
 msgid "To do"
-msgstr ""
+msgstr "À faire"
 
 #: utils/enum.py:47
 msgid "Ongoing"
-msgstr ""
+msgstr "En cours"
 
 #: utils/enum.py:48 utils/enum.py:61
 msgid "Submitted"
-msgstr ""
+msgstr "Soumis"
 
 #: utils/enum.py:49
 msgid "Validated"
-msgstr ""
+msgstr "Validé"
 
 #: utils/enum.py:50
 msgid "Rejected"
-msgstr ""
+msgstr "Rejeté"
 
 #: utils/enum.py:51
 msgid "Submission received"
@@ -1044,7 +1044,7 @@ msgstr ""
 
 #: utils/enum.py:55
 msgid "Present"
-msgstr ""
+msgstr "Présent(e)"
 
 #: utils/enum.py:56
 msgid "Absent"
@@ -1097,6 +1097,130 @@ msgstr ""
 #: utils/enum.py:79
 msgid "Daily report"
 msgstr ""
+
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Sign out"
+msgstr "Se déconnecter"
+
+msgid "Interns"
+msgstr "Stagiaires"
+
+msgid "Supervisors"
+msgstr "Superviseurs"
+
+msgid "Departments"
+msgstr "Départements"
+
+msgid "Groups"
+msgstr "Groupes"
+
+msgid "Supervision"
+msgstr "Supervision"
+
+msgid "Reports"
+msgstr "Rapports"
+
+msgid "My interns"
+msgstr "Mes stagiaires"
+
+msgid "Training Program"
+msgstr "Programme de formation"
+
+msgid "Assignments"
+msgstr "Devoirs"
+
+msgid "Submissions"
+msgstr "Soumissions"
+
+msgid "Attendance"
+msgstr "Présence"
+
+msgid "Daily Reports"
+msgstr "Rapports quotidiens"
+
+msgid "Module"
+msgstr "Module"
+
+msgid "Assignment"
+msgstr "Devoir"
+
+msgid "Daily Report"
+msgstr "Rapport quotidien"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Parameters"
+msgstr "Paramètres"
+
+msgid "Welcome to your internship space. Keep going, your efforts matter!"
+msgstr "Bienvenue dans votre espace de stage. Continuez, vos efforts comptent !"
+
+msgid "Today"
+msgstr "Aujourd'hui"
+
+msgid "You are currently"
+msgstr "Vous êtes actuellement"
+
+msgid "Summary"
+msgstr "Résumé"
+
+msgid "Recent Activities"
+msgstr "Activités récentes"
+
+msgid "Your latest assignments and activity."
+msgstr "Vos derniers devoirs et activités."
+
+msgid "View all"
+msgstr "Tout voir"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Due date"
+msgstr "Date limite"
+
+msgid "Your recent activities will appear here when assignments are published."
+msgstr "Vos activités récentes apparaîtront ici lorsque les devoirs seront publiés."
+
+msgid "Admin Dashboard"
+msgstr "Tableau de bord administrateur"
+
+msgid "Monitor the internship platform and manage its users and groups."
+msgstr "Surveillez la plateforme de stages et gérez ses utilisateurs et ses groupes."
+
+msgid "Platform status"
+msgstr "État de la plateforme"
+
+msgid "Supervisor Dashboard"
+msgstr "Tableau de bord superviseur"
+
+msgid "Manage interns, assignments, attendance, and reviews from here."
+msgstr "Gérez les stagiaires, les devoirs, les présences et les évaluations depuis cet espace."
+
+msgid "Assigned interns"
+msgstr "Stagiaires affectés"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Updates about your internship activity."
+msgstr "Mises à jour concernant votre activité de stage."
+
+msgid "Unread"
+msgstr "Non lu"
+
+msgid "You have no notifications."
+msgstr "Vous n'avez aucune notification."
+
+msgid "Overall progress"
+msgstr "Progression globale"
+
+msgid "Pending assignments"
+msgstr "Devoirs en attente"
+
 
 #~ msgid "Account Inactive"
 #~ msgstr "Compte inactif"
