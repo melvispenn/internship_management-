@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap");
 @import "tailwindcss";
 
 @source "../../templates";
@@ -60,6 +61,13 @@
 }
 
 @layer components {
+  .nav-link { @apply inline-flex min-h-10 min-w-[84px] items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold text-inpace-navy-800 transition hover:bg-inpace-blue-100 hover:text-inpace-blue-700; }
+  .mobile-nav-link { @apply rounded-xl px-3 py-2.5 text-sm font-semibold text-inpace-navy-800 transition hover:bg-inpace-blue-100 hover:text-inpace-blue-700; }
+  .nav-action { @apply inline-flex min-h-10 min-w-[84px] items-center justify-center rounded-xl px-3.5 py-2.5 text-sm font-semibold transition focus-visible:ring-inpace-bright-blue; }
+  .nav-action-muted { @apply border border-inpace-blue-100 bg-white text-inpace-navy-900 hover:border-inpace-blue-400 hover:bg-inpace-blue-100; }
+  .nav-action-primary { @apply bg-inpace-blue-600 text-white shadow-sm hover:bg-inpace-blue-700; }
+  .hero-handwritten { font-family: "Caveat", cursive; }
+
   /* Authentication layout */
   .auth-page { @apply min-h-screen bg-gradient-to-br from-inpace-navy-950 via-inpace-navy-900 to-inpace-blue-600 text-content; }
   .auth-shell { @apply flex min-h-screen flex-col; }
