@@ -38,10 +38,7 @@ class User(AbstractUser):
         default=UserRole.INTERN,
     )
     email = EmailField(_("email address"), unique=True)
-
-    phone = models.CharField( _("phone number"), max_length=30, blank=True, )
-
-   
+    phone_number = PhoneNumberField(_("phone number"), blank=True)
 
     username = None  # type: ignore[assignment]
 
